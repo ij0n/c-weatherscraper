@@ -1,5 +1,3 @@
-# thanks to kristall, who helped me big time in learning python and who teached me line-by-line how to write this script. Everything that appears unprofessionally in this script has been grown on my madness and has nothing to do with kristalls ingenuity and teaching.
-
 #!/usr/bin/env python3
 
 import urllib.request
@@ -81,12 +79,10 @@ rainradar_name = 'rainradar.gif'
 print('starting download procedure of rain-radar using ',rainradar_url)
 download(rainradar_url,rainradar_name) 
 
-'''
 solarweather_txt_url = 'http://www.swpc.noaa.gov/ftpdir/lists/particle/Gs_part_5m.txt'
 solarweather_txt_name = '5minute-table.txt'
 print('starting download procedure of solar weather table 5min res. using ',solarweather_txt_url)
 download(solarweather_txt_url,solarweather_txt_name) 
-'''
 
 solar_img_begin = snippet_solar.find('href="') + 6
 solar_img_end = snippet_solar.find('">',solar_img_begin)
