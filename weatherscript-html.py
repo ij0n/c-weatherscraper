@@ -15,7 +15,7 @@ def download(url,targetname):
 	localFile.close()
 
 local_weather = urllib.request.urlopen('http://www.wetter24.de/wetter/berlin-alexanderplatz/10389.html')
-full_src_local_weather = local_weather.read().decode()
+full_src_local_weather = local_weather.read().decode(encoding='UTF-8',errors='strict')
 
 solar_weather = urllib.request.urlopen('http://sdo.gsfc.nasa.gov/data/')
 full_src_solar_weather = solar_weather.read().decode('ISO 8859-1')
@@ -98,7 +98,7 @@ fobj.write("captured at: %s.%s.%s %s:%s h %ssec <br />" % (day, month, year, hou
 fobj.write('captured at base of main-antenna </p>')
 fobj.write("<p>")
 fobj.write("Bedingungen: <b> %s </b> <br />" % (condition))
-fobj.write('Temperature <b> %s °C</b> <br />' % (temp))
+fobj.write('Temperature <b> %s </b> <br />' % (temp))
 fobj.write('Wind from <b> %s </b> <br />' % (wind))
 fobj.write('Wind with <b> %s </b> <br />' % (w_speed))
 fobj.write('Pressure <b>%s</b> </p>' % (press))
